@@ -1,0 +1,109 @@
+Regions: 100 
+Income threshold: 39753.79 
+
+ M1 
+
+Call:
+lm(formula = LE40W ~ SmokersQ1 + MortRate30, data = d)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.9605 -0.5247  0.0010  0.5011  1.3370 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  85.34579    0.42638 200.165  < 2e-16 ***
+SmokersQ1   -12.49092    1.56253  -7.994 2.76e-12 ***
+MortRate30   -0.25199    0.09488  -2.656  0.00925 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.6796 on 97 degrees of freedom
+Multiple R-squared:  0.4155,	Adjusted R-squared:  0.4034 
+F-statistic: 34.47 on 2 and 97 DF,  p-value: 4.9e-12
+
+                  2.5 %      97.5 %
+(Intercept)  84.4995523 86.19203169
+SmokersQ1   -15.5921180 -9.38971993
+MortRate30   -0.4403042 -0.06367784
+
+ M2 
+
+Call:
+lm(formula = LE40W ~ SmokersQ1 + MortRate30 + unter_durchschnitt, 
+    data = d)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.9438 -0.4998 -0.0107  0.5046  1.3235 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         85.35521    0.42915 198.894  < 2e-16 ***
+SmokersQ1          -12.41681    1.58367  -7.841 6.17e-12 ***
+MortRate30          -0.23598    0.10559  -2.235   0.0277 *  
+unter_durchschnitt  -0.05394    0.15311  -0.352   0.7254    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.6827 on 96 degrees of freedom
+Multiple R-squared:  0.4162,	Adjusted R-squared:  0.398 
+F-statistic: 22.82 on 3 and 96 DF,  p-value: 3.105e-11
+
+                         2.5 %      97.5 %
+(Intercept)         84.5033585 86.20706467
+SmokersQ1          -15.5603702 -9.27325360
+MortRate30          -0.4455786 -0.02638317
+unter_durchschnitt  -0.3578706  0.24998428
+
+ M3 
+
+Call:
+lm(formula = LE40W ~ SmokersQ1 * unter_durchschnitt + MortRate30, 
+    data = d)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.7902 -0.4070 -0.0169  0.4483  1.5789 
+
+Coefficients:
+                             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)                   86.6673     0.6134 141.298  < 2e-16 ***
+SmokersQ1                    -17.3842     2.2957  -7.573 2.37e-11 ***
+unter_durchschnitt            -2.4266     0.8324  -2.915  0.00443 ** 
+MortRate30                    -0.2401     0.1018  -2.360  0.02034 *  
+SmokersQ1:unter_durchschnitt   8.8575     3.0582   2.896  0.00469 ** 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.6579 on 95 degrees of freedom
+Multiple R-squared:  0.4636,	Adjusted R-squared:  0.441 
+F-statistic: 20.53 on 4 and 95 DF,  p-value: 3.26e-12
+
+                                   2.5 %       97.5 %
+(Intercept)                   85.4495753  87.88494271
+SmokersQ1                    -21.9417880 -12.82670657
+unter_durchschnitt            -4.0791294  -0.77414777
+MortRate30                    -0.4421274  -0.03809478
+SmokersQ1:unter_durchschnitt   2.7862593  14.92865277
+
+Session
+R version 4.4.2 (2024-10-31 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 26200)
+
+Matrix products: default
+
+
+locale:
+[1] C
+system code page: 65001
+
+time zone: Europe/Zurich
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.4.2
